@@ -1,8 +1,8 @@
 {
-  "name": "gitbook-plugin-theme-default",
-  "description": "Default theme for GitBook",
+  "name": "gitbook-plugin-theme-aleen42",
+  "description": "aleen42's personal wiki theme for GitBook",
   "main": "./index.js",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "engines": {
     "gitbook": ">=3.0.0"
   },
@@ -21,7 +21,7 @@
     "uglify-js": "2.7.3"
   },
   "scripts": {
-    "prepublish": "./src/build.sh"
+    "prepublish": "bash ./src/build.sh"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,9 @@
     {
       "name": "Samy Pessé",
       "email": "samy@gitbook.com"
+    }, {
+      "name": "Aleen",
+      "email": "aleen42@vip.qq.com"
     }
   ],
   "gitbook": {
