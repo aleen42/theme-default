@@ -1,4 +1,6 @@
 .book-summary {
+    .scrollbar;
+
     font-family: @font-family-sans;
 
     position: absolute;
@@ -8,22 +10,28 @@
     z-index: 1;
     overflow-y: auto;
 
+    margin-top: 0;
     width: @sidebar-width;
     color: @sidebar-color;
     background: @sidebar-background;
-    border-right: @sidebar-border-right;
+    background-size: cover;
+    border: none;
+    box-shadow: -8px 6px 18px #000 inset;
 
     .transition(left @sidebar-transition-duration ease);
 
     ul.summary {
         list-style: none;
         margin: 0px;
-        padding: 0px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
 
         .transition(top 0.5s ease);
 
         li {
             list-style: none;
+            position: relative;
+            .transition(all 0.4s ease);
 
             &.header {
                 padding: @sidebar-link-padding-v @sidebar-link-padding-h;
@@ -59,6 +67,10 @@
                 }
             }
 
+            a {
+                .transition(all 0.3s);
+            }
+
             a, span {
                 display: block;
                 padding: @sidebar-link-padding-v @sidebar-link-padding-h;
@@ -85,16 +97,41 @@
                 text-decoration: none;
             }
 
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.45);
+
+                &::before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border: 5px solid #bbb;
+                    position: absolute;
+                    border-bottom: transparent 5px solid;
+                    border-right: transparent 5px solid;
+                    left: 0;
+                    top: 0;
+                }
+            }
+
             ul {
-                padding-left: @sidebar-nested-padding;
+                padding: 10px;
             }
         }
     }
 
+    &::-webkit-scrollbar {
+        /** if you want to style your own scroll bar, this pseudo should be written */
+        /** Part 1 */
+        width: 6px;
+        height: 6px;
+        /** engine 3.0.3 */
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
     @media (max-width: @sidebar-breakpoint) {
-        width: calc(~"100% - 60px");
         bottom: 0px;
         left: -100%;
+        width: 80%;
     }
 }
 

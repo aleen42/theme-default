@@ -33,6 +33,16 @@
     &.navigation-prev {
         left: 0px;
     }
+
+    a& {
+        color: @theme-main-color;
+        .transition(all 0.3s);
+
+        &:focus,
+        &:active {
+            color: @theme-main-color;
+        }
+    }
 }
 
 @media (max-width: @mobileMaxWidth) {

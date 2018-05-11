@@ -4,6 +4,10 @@
     height: 100%;
 
     &.with-summary {
+        .book-header {
+            width: calc(100% - @sidebar-width);
+        }
+
         @media (min-width: @sidebar-breakpoint) {
             .book-body {
                 left: @sidebar-width;
@@ -12,8 +16,35 @@
         @media (max-width: @sidebar-breakpoint) {
             overflow: hidden;
 
+            .page-wrapper, a.navigation, .dropdown {
+                display: none;
+            }
+
+            .js-toolbar-action {
+                width: 100%;
+                font-size: 1.6em;
+            }
+
+            .book-header {
+                width: 100%;
+                text-align: center;
+                left: 0;
+                .btn {
+                    padding: 20px 15px;
+                    height: auto;
+                }
+
+                h1 {
+                    display: none;
+                }
+            }
+
             .book-body {
-                .translate(~"calc(100% - 60px)", 0px);
+                .transform(translateX(calc(400% + 2px)));
+                width: 20%;
+                .body-inner {
+                    position: relative;
+                }
             }
         }
     }
@@ -38,6 +69,7 @@
     .transition(left @sidebar-transition-duration ease);
 
     .body-inner {
+        .scrollbar;
         position: absolute;
         top: 0px;
         right: 0px;

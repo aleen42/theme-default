@@ -1,8 +1,12 @@
 .markdown-section {
-    .gitbook-markdown(@md-color: @content-color, @md-line-height: @content-line-height);
+    .gitbook-markdown(@md-color: @content-color, @md-line-height: @content-line-height, @md-link-color: @theme-main-color);
 
     .glossary-term {
         cursor: help;
         text-decoration: underline;
+    }
+
+    table {
+        display: block;
     }
 }

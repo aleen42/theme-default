@@ -8,15 +8,15 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base);
 
 // Sizes
-@mobileMaxWidth:                      1240px;
+@mobileMaxWidth:                      720px;
 
 // Header
 @header-height:                       50px;
-@header-color:                        hsl(194, 5%, 52%);
-@header-background:                   transparent;
+@header-color:                        #000;
+@header-background:                   rgba(255, 255, 255, 0.7);
 @header-border:                       rgba(0, 0, 0, 0.07);
-@header-button-color:                 #ccc;
-@header-button-hover-color:           #444;
+@header-button-color:                 #000;
+@header-button-hover-color:           #000;
 @header-button-hover-background:      none;
 
 // Navigation
@@ -28,25 +28,23 @@
 
 // Sidebar
 @sidebar-transition-duration:         250ms;
-@sidebar-width:                       300px;
+@sidebar-width:                       25%;
 @sidebar-breakpoint:                  600px;
-@sidebar-color:                       hsl(207, 15%, 25%);
-@sidebar-background:                  #fafafa;
-@sidebar-border-right:                1px solid @header-border;
+@sidebar-color:                       #000;
+@sidebar-background:                  #000 url(https://raw.githubusercontent.com/aleen42/PersonalWiki/master/pic/summary-background.jpg) no-repeat center;
 
-@sidebar-nested-padding:              20px;
 @sidebar-divider-color:               @header-border;
 
 @sidebar-header-color:                #939da3;
 
 @sidebar-link-color:                  @sidebar-color;
 @sidebar-link-background:             transparent;
-@sidebar-link-hover-color:            hsl(207, 100%, 50%);
+@sidebar-link-hover-color:            @theme-main-color;
 @sidebar-link-hover-background:       transparent;
 @sidebar-link-padding-v:              10px;
 @sidebar-link-padding-h:              15px;
 
-@sidebar-icon-color:                  hsl(120, 60%, 50%);
+@sidebar-icon-color:                  #000;
 @sidebar-link-completed:              @sidebar-link-color;
 @sidebar-link-completed-weight:       normal;
 
@@ -66,7 +64,7 @@
 // Dropdown
 @dropdown-zindex:                     100;
 @dropdown-divider-color:              @sidebar-divider-color;
-@dropdown-background:                 @sidebar-background;
+@dropdown-background:                 #fafafa;
 @dropdown-button-color:               darken(@header-button-color, 15%);
 @dropdown-border-color:               @sidebar-divider-color;
 @dropdown-button-hover-color:         @header-button-hover-color;
@@ -84,7 +82,8 @@
 // Fonts
 @font-family-serif:                   Georgia, serif;
 @font-family-sans:                    "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-base:                    @font-family-sans;
+@font-family-aleen42:                 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "微软雅黑";
+@font-family-base:                    @font-family-aleen42;
 @headings-font-family:                inherit;
 
 @FontPath:                            '@{staticPath}/fonts';
