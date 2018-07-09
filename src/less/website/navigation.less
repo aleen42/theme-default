@@ -36,11 +36,13 @@
 
     a& {
         color: @theme-main-color;
+        color: var(--theme-color, @theme-main-color);
         .transition(all 0.3s);
 
         &:focus,
         &:active {
             color: @theme-main-color;
+            color: var(--theme-color, @theme-main-color);
         }
     }
 }
