@@ -3,11 +3,10 @@
 */
 
 #book-search-input {
-    display: none; // hide search
+    display: var(--search-display, none); // hide search
     padding: 6px;
-    background: transparent;
+    background: rgba(255, 255, 255, .2);
     transition: top 0.5s ease;
-    background: #fff;
     border-bottom: 1px solid @header-border;
     border-top: 1px solid @header-border;
     margin-bottom: 10px;
@@ -42,7 +41,7 @@
 
         .has-results {
             .search-results-item {
-                .gitbook-markdown(@md-color: @content-color, @md-line-height: @content-line-height);
+                .gitbook-markdown(@md-color: @content-color, @md-line-height: @content-line-height, @md-link-color: var(--theme-color, @theme-main-color));
             }
 
             .search-results-item h3 {
