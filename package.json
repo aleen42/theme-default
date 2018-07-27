@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-theme-aleen42",
   "description": "the personal wiki theme of aleen42 for GitBook",
   "main": "./index.js",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "engines": {
     "gitbook": ">=3.0.0"
   },
