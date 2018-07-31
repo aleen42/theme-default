@@ -66,13 +66,10 @@
     border-radius: 10px;
   }
 
-  &::-webkit-scrollbar-thumb:hover {
+  &::-webkit-scrollbar-thumb:hover,
+  &::-webkit-scrollbar-thumb:active {
     background-color: @theme-main-color;
     background-color: var(--theme-color, @theme-main-color);
-  }
-
-  &::-webkit-scrollbar-thumb:active {
-    background-color: rgba(100, 0, 0, 1);
   }
 
   &::-webkit-scrollbar-corner {
