@@ -24,7 +24,6 @@
 
     &:hover {
         text-decoration: none;
-        color: @navigation-hover-color;
     }
 
     &.navigation-next {
@@ -49,7 +48,8 @@
 
 @media (max-width: @mobileMaxWidth) {
     .navigation {
-        position: static;
+        border-top: 1px solid #efefef;
+        background: rgba(255,255,255,.7);
         top: auto;
         max-width: 50%;
         width: 50%;

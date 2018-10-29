@@ -2,7 +2,6 @@ var $ = require('jquery');
 var url = require('url');
 
 var loading = require('./loading');
-var platform = require('./platform');
 
 var gitbook = window.gitbook;
 
@@ -12,11 +11,7 @@ var usePushState = (typeof history.pushState !== 'undefined');
     Get current scroller element
 */
 function getScroller() {
-    if (platform.isSmallScreen()) {
-        return $('.book-body');
-    } else {
-        return $('.body-inner');
-    }
+    return $('.body-inner');
 }
 
 /*
