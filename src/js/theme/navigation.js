@@ -117,7 +117,11 @@ var $chapters,
 // Set a chapter as active in summary and update state
 function setChapterActive($chapter, hash) {
     // No chapter and no hash means first chapter
-    if (!$chapter && !hash) {
+    if ((!$chapter || !$chapter.length) && !hash) {
+        if (!$chapters.first().length) {
+            return;
+        }
+
         $chapter = $chapters.first();
     }
 
@@ -147,6 +151,14 @@ function setChapterActive($chapter, hash) {
     // Add class to selected chapter
     $chapters.removeClass('active');
     $chapter.addClass('active');
+
+    // Add class to parents of selected chapter
+    var $parent = $chapter.parent().closest('li');
+    while ($parent.length) {
+        // top += $parent.position().top;
+        $parent.addClass('active');
+        $parent = $parent.parent().closest('li');
+    }
 
     // Update history state if needed
     hash = getChapterHash($chapter);

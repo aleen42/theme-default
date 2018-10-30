@@ -1,6 +1,7 @@
 {% macro articles(_articles) %}
     {% for article in _articles %}
-        <li class="chapter {% if article.path == file.path and not article.anchor %}active{% endif %}" data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}"{% endif %}>
+        <li class="chapter {% if article.path == file.path or (getArticleByPath(file.path).level.indexOf(article.level) == 0 and getArticleByPath(file.path).level.replace(article.level, '')[0] == '.') %}active{% endif %}"
+            data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}"{% endif %}>
             {% if article.path and getPageByPath(article.path) %}
                 <a href="{{ article.path|resolveFile }}{{ article.anchor }}">
             {% elif article.url %}
@@ -19,15 +20,16 @@
             {% endif %}
 
             {% if article.articles.length > 0 %}
-            <ul class="articles">
+            <ul class="articles {% if article.path == file.path %}toggled{% endif %}">
                 {{ articles(article.articles, file, config) }}
+                <div class="toggle-option"></div>
             </ul>
             {% endif %}
         </li>
     {% endfor %}
 {% endmacro %}
 
-<ul class="summary">
+<ul class="summary toggled">
     {% set _divider = false %}
     {% if config.links.sidebar  %}
     {% for linkTitle, link in config.links.sidebar  %}

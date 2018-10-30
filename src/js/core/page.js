@@ -6,6 +6,9 @@ var events = require('./events');
 var started = false;
 var state = {};
 
+// State of scroll position
+var scrollTop = 0;
+
 /*
     Signal that page has changed, this function must be called by
     themes after page is loaded and when navigation changed
@@ -13,6 +16,13 @@ var state = {};
 function hasChanged(ctx) {
     console.log('page has changed', ctx); // eslint-disable-line no-console
     setState(ctx);
+    // bind event of toggle mode
+    $('.book-summary ul > .toggle-option').unbind('click').bind('click', function () {
+        $(this).parent().toggleClass('toggled');
+        return false;
+    });
+    // scroll to current chapter
+    scrollToChapter(ctx.page.level);
 
     if (!started) {
         // Notify that gitbook is ready
@@ -21,6 +31,29 @@ function hasChanged(ctx) {
     }
 
     events.trigger('page.change');
+}
+
+function scrollToChapter(level) {
+    var $chapter = $('.book-summary .summary .chapter[data-level="' + level + '"]');
+
+    var top = ($chapter.position() || {top: 0}).top;
+    var $parent = $chapter.parent().closest('li');
+    while ($parent.length) {
+        top += $parent.position().top;
+        $parent = $parent.parent().closest('li');
+    }
+
+    // Scroll to the specific navigator
+    var $scroller = $('.book-summary');
+    // Unbind scroll detection
+    $scroller.unbind('scroll');
+    $scroller.scroll(function () {
+        scrollTop = $scroller[0].scrollTop;
+    });
+
+    $scroller.animate({scrollTop: scrollTop}, 0).animate({
+        scrollTop: top - $scroller.height() * 0.382
+    }, 800, 'swing');
 }
 
 /*
