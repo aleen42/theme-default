@@ -14,6 +14,9 @@ var scrollTop = 0;
     themes after page is loaded and when navigation changed
 */
 function hasChanged(ctx) {
+    // Remove all themes
+    gitbook && gitbook.fontsettings && gitbook.fontsettings.setThemes([]); // eslint-disable-line no-undef
+
     console.log('page has changed', ctx); // eslint-disable-line no-console
     setState(ctx);
     // bind event of toggle mode
