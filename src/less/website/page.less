@@ -11,6 +11,17 @@
     padding: 50px 15px 60px 15px;
 
     .markdown-section {
+        /** fallback */
+        a {
+            color: @theme-main-color;
+            color: var(--theme-color, @theme-main-color);
+        }
+
+        blockquote {
+            border-left: 4px solid @theme-main-color;
+            border-left: 4px solid var(--theme-color, @theme-main-color);
+        }
+
         h1,
         h2 {
             font-weight: 600;
