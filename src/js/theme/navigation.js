@@ -348,7 +348,9 @@ function updateNavigationPosition() {
 
     bodyInnerWidth = parseInt($('.body-inner').css('width'), 10);
     pageWrapperWidth = parseInt($('.page-wrapper').css('width'), 10);
-    $('.navigation-next').css('margin-right', (bodyInnerWidth - pageWrapperWidth) + 'px');
+    var scrollbarWidth = bodyInnerWidth - pageWrapperWidth;
+    $('.book-header').css('margin-right', scrollbarWidth + 'px').css('padding-left', scrollbarWidth + 'px');
+    $('.navigation-next').css('margin-right', scrollbarWidth + 'px');
 
     // Reset scroll to get current scroller
     var $scroller = getScroller();
