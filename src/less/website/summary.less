@@ -13,13 +13,46 @@
     margin-top: 0;
     width: @sidebar-width;
     color: @sidebar-color;
-    background: @sidebar-background;
-    background: var(--navigator-bg, @sidebar-background);
-    background-size: cover;
     border: none;
-    box-shadow: -8px 6px 18px #000 inset;
+    background: black;
 
     .transition(left @sidebar-transition-duration ease);
+
+    nav {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &::before{
+        content: '';
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        filter: blur(16px);
+        margin: -30px;
+        background: var(--navigator-bg,#333);
+        background-size: cover;
+        width: @sidebar-width - @scroll-bar-width + 60;
+        z-index: -1;
+
+        @media (max-width: @sidebar-breakpoint) {
+            width: calc(~"80% - @{scroll-bar-width} + 60px")
+        }
+    }
+
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        width: @sidebar-width;
+        bottom: 0;
+        box-shadow: -8px 0px 23px rgba(0, 0, 0, .8) inset;
+        pointer-events: none;
+
+        @media (max-width: @sidebar-breakpoint) {
+            width: 80%;
+        }
+    }
 
     ul.summary {
         list-style: none;

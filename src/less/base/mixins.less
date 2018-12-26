@@ -15,6 +15,14 @@
           transition: transform @transition;
 }
 
+.filter(@filter) {
+  -webkit-filter: @filter;
+  -moz-filter: @filter;
+  -o-filter: @filter;
+  -ms-filter: @filter;
+  filter: @filter;
+}
+
 .transform(@transform) {
   -webkit-transform: @transform;
      -moz-transform: @transform;
@@ -41,8 +49,8 @@
   &::-webkit-scrollbar {
     /** if you want to style your own scroll bar, this pseudo should be written */
     /** Part 1 */
-    width: 6px;
-    height: 6px;
+    width: @scroll-bar-width;
+    height: @scroll-bar-width;
   }
 
   &::-webkit-scrollbar-button {

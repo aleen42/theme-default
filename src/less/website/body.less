@@ -5,7 +5,7 @@
 
     &.with-summary {
         .book-header {
-            width: calc(~"100% - @{sidebar-width}");
+            width: calc(~"100% - @{sidebar-width} - @{scroll-bar-width}");
         }
 
         @media (min-width: @sidebar-breakpoint) {
@@ -64,6 +64,7 @@
     left: 0px;
     bottom: 0px;
     overflow-y: auto;
+    z-index: 2;
 
     color: @page-color;
     background: @body-background;
