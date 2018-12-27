@@ -34,6 +34,7 @@
         background-size: cover;
         width: @sidebar-width - @scroll-bar-width + 60;
         z-index: -1;
+        pointer-events: none;
 
         @media (max-width: @sidebar-breakpoint) {
             width: calc(~"80% - @{scroll-bar-width} + 60px")
