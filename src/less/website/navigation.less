@@ -34,21 +34,19 @@
     }
 
     a& {
-        color: @theme-main-color;
         color: var(--theme-color, @theme-main-color);
         .transition(all 0.3s);
 
         &:focus,
         &:active {
-            color: @theme-main-color;
             color: var(--theme-color, @theme-main-color);
         }
     }
 }
 
 .navigator() {
-    border-top: 1px solid #efefef;
-    background: rgba(255,255,255,.7);
+    border-top: 1px solid @border-color;
+    background: @header-background;
     top: auto;
     max-width: 50%;
     width: 50%;

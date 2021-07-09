@@ -68,13 +68,12 @@
 
   &::-webkit-scrollbar-thumb {
     /** Part 5 */
-    background-color: rgba(0, 0, 0, 1);
+    background-color: @page-color;
     border-radius: 10px;
   }
 
   &::-webkit-scrollbar-thumb:hover,
   &::-webkit-scrollbar-thumb:active {
-    background-color: @theme-main-color;
     background-color: var(--theme-color, @theme-main-color);
   }
 

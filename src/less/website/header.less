@@ -14,7 +14,7 @@
     font-size: 0.85em;
     color: @header-color;
     background: @header-background;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid @header-border;
 
     .btn {
         display: block;
@@ -75,6 +75,7 @@
             padding-right: 50px;
             i {
                 display: inline-block;
+                color: @border-color;
             }
             a {
                 display: none;
@@ -96,7 +97,7 @@
                         margin-top: -20px;
                         padding: 5px;
                         font-size: 40px;
-                        color: rgba(0, 0, 0, 0.6);
+                        color: @border-color;
                     }
                 }
             }

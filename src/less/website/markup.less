@@ -8,5 +8,18 @@
 
     table {
         display: block;
+
+        tr {
+            background-color: @body-background;
+            border-top: 1px solid @border-color;
+
+            td, th {
+                border: 1px solid @border-color;
+            }
+
+            &:nth-child(2n) {
+                background-color: var(--color-bg-tertiary, #f6f8fa);
+            }
+        }
     }
 }

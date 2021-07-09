@@ -10,12 +10,14 @@
 // Sizes
 @mobileMaxWidth:                      986px;
 
+@border-color:                        var(--color-book-border, rgba(13, 17, 23, 0.2));
+
 // Header
 @header-height:                       50px;
-@header-color:                        #000;
-@header-background:                   rgba(255, 255, 255, 0.7);
-@header-border:                       rgba(0, 0, 0, 0.07);
-@header-button-color:                 #000;
+@header-color:                        @page-color;
+@header-background:                   var(--color-book-header-bg, rgba(255, 255, 255, 0.7));
+@header-border:                       @border-color;
+@header-button-color:                 @page-color;
 @header-button-hover-color:           @theme-main-color;
 @header-button-hover-background:      none;
 
@@ -24,7 +26,7 @@
 @navigation-hover-color:              @header-button-hover-color;
 
 // Body
-@body-background:                     white;
+@body-background:                     var(--color-bg-primary, #fff);
 
 // Sidebar
 @sidebar-transition-duration:         250ms;
@@ -54,18 +56,18 @@
 @search-highlight-color:              rgba(255, 220, 0, 0.4);
 
 // Page
-@page-color:                          black;
+@page-color:                          var(--color-text-primary, #24292f);
 @page-background:                     @body-background;
 
 // Content
 @content-line-height:                 1.7;
-@content-color:                       #333333;
+@content-color:                       @page-color;
 
 // Dropdown
 @dropdown-zindex:                     100;
 @dropdown-divider-color:              @sidebar-divider-color;
 @dropdown-background:                 #fafafa;
-@dropdown-button-color:               darken(@header-button-color, 15%);
+@dropdown-button-color:               #000;
 @dropdown-border-color:               @sidebar-divider-color;
 
 // Buttons

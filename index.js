@@ -6,7 +6,13 @@ module.exports = {
 
             return config;
         }
-    }
+    },
+    website: {
+        assets: '_assets',
+        js: [
+            'mode.js',
+        ],
+    },
 };
 
 

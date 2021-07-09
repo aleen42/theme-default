@@ -12,12 +12,10 @@
     .markdown-section {
         /** fallback */
         a {
-            color: @theme-main-color;
             color: var(--theme-color, @theme-main-color);
         }
 
         blockquote {
-            border-left: 4px solid @theme-main-color;
             border-left: 4px solid var(--theme-color, @theme-main-color);
         }
 
@@ -70,7 +68,7 @@
             &::after {
                 content: "";
                 display: block;
-                border-bottom: 1px #ccc solid;
+                border-bottom: 1px @border-color solid;
                 height: 1px;
                 opacity: 0.4;
             }
