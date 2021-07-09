@@ -21,7 +21,11 @@
     "uglify-js": "2.7.3"
   },
   "scripts": {
-    "prepublish": "bash ./src/build.sh"
+    "build": "npm run compile:js && npm run compile:css && bash ./build.sh",
+    "compile:js": "npm run compile:core && npm run compile:theme",
+    "compile:core": "browserify src/js/core/index.js | uglifyjs -mc > _assets/website/gitbook.js",
+    "compile:theme": "browserify src/js/theme/index.js | uglifyjs -mc > _assets/website/theme.js",
+    "compile:css": "lessc -clean-css src/less/website.less _assets/website/style.css"
   },
   "repository": {
     "type": "git",
