@@ -1,10 +1,7 @@
 require([ 'gitbook' ], function (gitbook) {
     gitbook.events.bind('start', function () {
-        var mode = localStorage.getItem('color-mode') || 'light';
-        document.documentElement.setAttribute('data-color-mode', mode);
-
         gitbook.toolbar.createButton({
-            icon: 'fa fa-' + (mode === 'light' ? 'moon' : 'sun') + '-o',
+            icon: 'fa fa-' + ((localStorage.getItem('color-mode') || 'light') === 'light' ? 'moon' : 'sun') + '-o',
             label: 'Toggle mode',
             position: 'right',
             className: 'j-toggle-mode',
